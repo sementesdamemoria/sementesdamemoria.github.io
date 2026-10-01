@@ -1,0 +1,34 @@
+PUBLICAR O SITE NO GITHUB PAGES (pelo navegador, sem linha de comando)
+
+Os nomes dos botões do GitHub mudam de tempos em tempos; se algum não estiver onde está descrito, procure o equivalente.
+Atenção: no plano gratuito, o GitHub Pages exige repositório público. Tudo o que for colocado no repositório
+(inclusive o CSV e as fotos do catálogo) fica acessível a qualquer pessoa. Hoje a pasta só tem conteúdo institucional.
+
+1. Crie uma conta em github.com (use o e-mail do projeto, quando existir, para que a conta não fique presa a um e-mail pessoal).
+2. Clique em "New repository" (botão verde, ou o "+" no canto superior direito).
+   Nome sugerido: sementes-da-memoria (sem acentos nem espaços). Marque "Public". Clique em "Create repository".
+3. Na página do repositório vazio, clique em "uploading an existing file".
+4. Extraia o .zip no computador. Abra a pasta extraída e arraste para a janela do GitHub o CONTEÚDO da pasta
+   (index.html, styles.css, script.js, as pastas dados, fontes, img e os arquivos de texto), não o .zip e não a pasta de fora.
+   O index.html precisa ficar na raiz do repositório. O envio pelo navegador aceita até 100 arquivos por vez e 25 MB por arquivo;
+   esta pasta tem cerca de 50 arquivos. Para as fotografias, envie em lotes de menos de 100.
+5. Role a página, escreva uma mensagem (por exemplo "Primeira versão") e clique em "Commit changes".
+6. Vá em "Settings" do repositório, depois "Pages". Em "Build and deployment", escolha "Deploy from a branch",
+   branch "main" e pasta "/ (root)". Clique em "Save".
+7. Aguarde alguns minutos e recarregue a página. O GitHub mostra o endereço, no formato
+   https://SEU-USUARIO.github.io/sementes-da-memoria/ . Abra e confira.
+8. Troque o endereço nas tags de pré-visualização: no repositório, abra index.html, clique no lápis (editar) e substitua as três
+   ocorrências de https://ENDERECO-DO-SITE/ pelo endereço do passo 7, mantendo a barra final. Clique em "Commit changes".
+   Depois, para testar a pré-visualização, cole o link numa conversa do WhatsApp. O WhatsApp guarda a primeira leitura do
+   link por um tempo; se tiver colado antes de corrigir, teste com o endereço seguido de ?v=2.
+9. Para preencher o e-mail: abra dados/config.js no repositório, clique no lápis, escreva o e-mail entre as aspas e confirme.
+   
+
+A cada alteração confirmada, o site é atualizado em um a dois minutos.
+
+CONTROLE E CUIDADOS
+- A conta do GitHub é sua: você é a administradora do site e pode alterar, apagar ou despublicar quando quiser.
+- Ative a verificação em duas etapas da conta (Settings > Password and authentication).
+- Se quiser um endereço próprio (por exemplo sementesdamemoria.com.br), o domínio é comprado à parte e depois indicado
+  em Settings > Pages > Custom domain.
+- Alternativas que não exigem repositório público: Cloudflare Pages e Netlify, com o mesmo conteúdo da pasta.

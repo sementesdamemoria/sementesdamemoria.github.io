@@ -1,0 +1,300 @@
+/* Sementes da Memória: folha de estilos (v3)
+   Corpo do site em colunas fluidas, com painéis de papel translúcido sobre os fundos e os brotos da apresentação.
+   Capa e fechamento continuam como "palcos" 16:9 (texto em cqw), como a capa e a contracapa de um livro. */
+
+@font-face{font-family:"Cormorant Garamond";font-weight:400;font-style:normal;font-display:swap;src:url(fontes/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:500;font-style:normal;font-display:swap;src:url(fontes/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:600;font-style:normal;font-display:swap;src:url(fontes/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:700;font-style:normal;font-display:swap;src:url(fontes/cormorant-garamond-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:500;font-style:italic;font-display:swap;src:url(fontes/cormorant-garamond-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:600;font-style:italic;font-display:swap;src:url(fontes/cormorant-garamond-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:"Great Vibes";font-weight:400;font-style:normal;font-display:swap;src:url(fontes/great-vibes-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:600;font-style:normal;font-display:swap;src:url(fontes/fraunces-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:700;font-style:normal;font-display:swap;src:url(fontes/fraunces-latin-700-normal.woff2) format("woff2")}
+
+:root{
+  --papel:#ffe8c9;
+  --fundo-base:#fbd8a9;        /* média dos fundos de aquarela, aparece onde um fundo se dissolve no seguinte */
+  --verde:#4e6013;             /* títulos */
+  --verde-faixa:#385b47;
+  --tinta:#5a2403;             /* texto corrido */
+  --oliva:#66660f;             /* citações e legendas (oliva da apresentação, escurecido para legibilidade) */
+  --ocre:#c8923a;
+  --marrom-claro:#8a3d08;
+  --borda:#7b8061;
+  --corpo:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --script:"Great Vibes","Cormorant Garamond",cursive;
+  --titulo:"Fraunces","Cormorant Garamond",Georgia,serif;
+  --gut:clamp(20px,5vw,64px);
+  --vidro:linear-gradient(160deg,rgba(255,251,242,.76),rgba(255,245,229,.62));
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--fundo-base);color:var(--tinta);font-family:var(--corpo);font-weight:500;line-height:1.45;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,p,blockquote,figure{margin:0}
+:focus-visible{outline:2px solid var(--verde);outline-offset:3px}
+
+/* ---------- Cabeçalho ---------- */
+.topo{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:8px var(--gut);
+  background:rgba(255,241,219,.62);border-bottom:1px solid rgba(123,128,97,.22);
+  -webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3)}
+.marca{font-family:var(--script);font-size:1.75rem;line-height:1.2;text-decoration:none;color:var(--verde-faixa);white-space:nowrap}
+.menu{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;justify-content:flex-end}
+.menu a{font-size:1.02rem;font-weight:600;text-decoration:none;color:var(--verde);letter-spacing:.01em;padding:4px 0;border-bottom:1px solid transparent;transition:border-color .2s}
+.menu a:hover,.menu a[aria-current="true"]{border-bottom-color:var(--verde)}
+.menu .menu-contato{padding:3px 15px;border:1px solid var(--verde);border-radius:999px;transition:background .2s}
+.menu .menu-contato:hover{background:rgba(78,96,19,.1)}
+.menu-botao{display:none;font:inherit;font-weight:600;color:var(--verde);background:none;border:1px solid var(--borda);border-radius:999px;padding:4px 16px;cursor:pointer}
+
+/* ---------- Seção fluida ---------- */
+.secao{position:relative;isolation:isolate;container-type:inline-size;display:flex;align-items:center;min-height:min(52vw,900px);
+  --larg:min(100cqw,2000px);          /* largura da arte dos brotos */
+  --mv:linear-gradient(transparent 0,#000 calc(var(--hm)*.1),#000 calc(var(--hm)*.55),transparent var(--hm),transparent calc(100% - var(--hm)),#000 calc(100% - var(--hm)*.55),#000 calc(100% - var(--hm)*.1),transparent 100%);
+  --mh:linear-gradient(90deg,transparent calc(50% - var(--larg)/2),#000 calc(50% - var(--larg)/2 + 48px),#000 calc(50% + var(--larg)/2 - 48px),transparent calc(50% + var(--larg)/2));
+  --hm:calc(var(--larg)*.28125);       /* altura de metade da arte (16:9 dividido ao meio) */
+}
+/* fundo de papel e aquarela, dissolvido nas bordas para não deixar emenda entre seções */
+.secao::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--fundo) center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(transparent,#000 110px,#000 calc(100% - 110px),transparent);
+  mask-image:linear-gradient(transparent,#000 110px,#000 calc(100% - 110px),transparent)}
+/* o fundo não se dissolve onde a seção encosta na capa ou no fechamento */
+.sem-fade-topo::before{-webkit-mask-image:linear-gradient(#000,#000 calc(100% - 110px),transparent);mask-image:linear-gradient(#000,#000 calc(100% - 110px),transparent)}
+.sem-fade-pe::before{-webkit-mask-image:linear-gradient(transparent,#000 110px,#000);mask-image:linear-gradient(transparent,#000 110px,#000)}
+/* brotos: metade de cima da arte no alto da seção, metade de baixo no pé, sempre na proporção original */
+.secao::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.92;
+  background:var(--brotos,none) var(--px-top,50%) 0/var(--larg) auto no-repeat,var(--brotos,none) var(--px-bot,50%) 100%/var(--larg) auto no-repeat;
+  -webkit-mask-image:var(--mv);mask-image:var(--mv)}
+@media (min-width:861px){.secao::after{-webkit-mask-image:var(--mv),var(--mh);mask-image:var(--mv),var(--mh);-webkit-mask-composite:source-in;mask-composite:intersect}}
+
+.miolo{position:relative;width:100%;max-width:calc(1120px + 2*var(--gut));margin:0 auto;padding:clamp(76px,8vw,132px) var(--gut)}
+.miolo.estreito{max-width:calc(800px + 2*var(--gut))}
+.miolo.largo{max-width:calc(1240px + 2*var(--gut))}
+
+.duas{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:clamp(28px,5vw,76px);align-items:start}
+.duas.inversa{grid-template-columns:minmax(0,8fr) minmax(0,5fr)}
+.duas.inversa .lado{order:2}
+.duas.retrato-dir{grid-template-columns:minmax(0,8fr) minmax(0,4.6fr);align-items:center}
+.duas.destaque-dir{grid-template-columns:minmax(0,8fr) minmax(0,4.4fr);align-items:center}
+.lado{position:sticky;top:clamp(88px,20vh,200px)}
+
+/* Painel de vidro de papel: translúcido, deixa os brotos aparecerem desfocados por trás */
+.painel{background:var(--vidro);border:1px solid rgba(255,255,255,.62);border-radius:clamp(16px,2vw,26px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 26px 50px -30px rgba(90,36,3,.38);
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);backdrop-filter:blur(18px) saturate(1.15)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.painel{background:rgba(250,238,216,.92)}}
+
+.texto{padding:clamp(24px,3.2vw,50px);font-size:clamp(1.18rem,1.04rem + .46vw,1.42rem);font-weight:600;line-height:1.55}
+.texto p+p{margin-top:1em}
+
+h2{font-family:var(--titulo);font-weight:700;color:var(--verde);line-height:1.12;font-size:clamp(2rem,1.3rem + 2.4vw,3.4rem)}
+h2::after{content:"";display:block;width:56px;height:3px;margin-top:.55em;border-radius:2px;background:var(--ocre)}
+h2.centro{text-align:center}
+h2.centro::after{margin-left:auto;margin-right:auto}
+h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9rem);letter-spacing:.01em}
+
+.lado blockquote{margin-top:clamp(28px,4vw,56px);font-size:clamp(1.22rem,1.05rem + .6vw,1.5rem);font-style:italic;font-weight:600;color:var(--oliva);line-height:1.4}
+.credito{margin-top:.8em;font-size:clamp(1.05rem,1rem + .3vw,1.2rem);font-style:italic;font-weight:600;color:var(--oliva);line-height:1.4}
+.credito strong{font-style:normal;font-weight:700}
+
+/* Retrato (Golinha) */
+.retrato img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:clamp(14px,1.6vw,20px);border:1px solid rgba(255,255,255,.65);box-shadow:0 26px 50px -28px rgba(90,36,3,.5)}
+.retrato figcaption{margin-top:1em;text-align:center;font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.05rem,1rem + .25vw,1.2rem);line-height:1.4}
+
+/* Trajetória: vitrine de materiais */
+.abertura{max-width:44em;margin:0 auto;text-align:center;font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);font-weight:600;line-height:1.45}
+.vitrine{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(18px,2.4vw,34px);margin-top:clamp(36px,5vw,72px);--h:clamp(200px,23vw,320px)}
+.vitrine img{border-radius:8px;box-shadow:0 22px 40px -24px rgba(90,36,3,.55);border:1px solid rgba(255,255,255,.6)}
+.v-candeeiro img,.v-sementes img{height:var(--h);width:auto}
+.v-video img{height:calc(var(--h)*.78);width:auto}
+.video-link{display:block}
+.video-link[aria-disabled="true"]{cursor:default}
+.video-link iframe{display:block;height:calc(var(--h)*.78);width:calc(var(--h)*.78*1.817);border:0;border-radius:8px}
+
+/* Três painéis (Memória viva, Como será feito) */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(36px,5vw,68px)}
+.nota{position:relative;padding:clamp(24px,2.4vw,36px);font-size:clamp(1.1rem,1.02rem + .3vw,1.28rem);font-weight:600;line-height:1.5}
+.nota::before{content:"";position:absolute;top:-1px;left:50%;width:46px;height:6px;transform:translateX(-50%);border-radius:0 0 5px 5px;background:var(--verde-faixa);opacity:.8}
+.nota h3{font-family:var(--titulo);font-size:clamp(1.12rem,1.05rem + .25vw,1.3rem);font-weight:700;color:var(--verde);line-height:1.25;margin-bottom:.7em}
+
+.link-video{display:inline-block;margin-top:.4em;font-size:.92em;font-weight:700;color:var(--verde);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.link-video:hover{text-decoration-thickness:2px}
+
+/* O livro */
+.titulo-topo{text-align:center;margin-bottom:clamp(24px,3vw,40px)}
+.sobretitulo{font-family:var(--titulo);font-weight:700;color:var(--verde);font-size:clamp(1rem,.95rem + .3vw,1.2rem);letter-spacing:.22em}
+.titulo-script{margin-top:.15em;font-style:italic;font-weight:500;color:#9a5a20;font-size:clamp(2rem,1.3rem + 2.4vw,3.2rem);line-height:1.15}
+
+/* Sementes que guardam histórias */
+.destaque{padding-left:clamp(18px,2vw,28px);border-left:3px solid var(--ocre);font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.4rem,1.1rem + 1.1vw,2.1rem);line-height:1.35}
+
+/* Como contribuir */
+.s11 .abertura{margin-top:clamp(20px,2.6vw,34px);color:var(--marrom-claro);font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem)}
+.selos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,44px);margin-top:clamp(36px,5vw,64px)}
+.selo{position:relative;padding:clamp(26px,3vw,40px) clamp(18px,2vw,28px);background:rgba(98,117,74,.94);color:#fdf6e3;text-align:center;
+  --r:6px;--p:22px;
+  -webkit-mask:radial-gradient(circle at 0 50%,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/100% var(--p) repeat-y,radial-gradient(circle at 100% 50%,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/100% var(--p) repeat-y,radial-gradient(circle at 50% 0,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/var(--p) 100% repeat-x,radial-gradient(circle at 50% 100%,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/var(--p) 100% repeat-x;
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(circle at 0 50%,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/100% var(--p) repeat-y,radial-gradient(circle at 100% 50%,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/100% var(--p) repeat-y,radial-gradient(circle at 50% 0,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/var(--p) 100% repeat-x,radial-gradient(circle at 50% 100%,#0000 var(--r),#000 calc(var(--r) + 1px)) 0 0/var(--p) 100% repeat-x;
+  mask-composite:intersect}
+.selo h3{font-family:var(--titulo);font-size:clamp(.95rem,.9rem + .2vw,1.1rem);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1em;color:#fff3d6}
+.selo ul{list-style:none;margin:0;padding:0;font-size:clamp(1.15rem,1.03rem + .4vw,1.38rem);line-height:1.5;font-weight:600}
+.selo li::after{content:" ·"}
+.selo li:last-child::after{content:""}
+.rodape-secao{max-width:52em;margin:clamp(36px,5vw,64px) auto 0;text-align:center;color:var(--marrom-claro);font-weight:600;font-size:clamp(1.1rem,1.02rem + .3vw,1.3rem);line-height:1.5}
+
+/* ---------- Palcos 16:9: capa e fechamento ---------- */
+.palco{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;container-type:inline-size;background:var(--papel) var(--fundo) center/cover no-repeat}
+.palco::before{content:"";position:absolute;inset:0;background:var(--brotos,none) 0 0/100% 100% no-repeat;pointer-events:none}
+.palco>*{position:absolute}
+
+.capa::before{display:none}
+.capa .palco-arte{inset:0}
+.capa-titulo{position:absolute;left:2.8%;top:9%;width:50%;font-family:var(--script);font-weight:400;font-size:6.05cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
+.capa-texto{left:5.5%;bottom:12.5%;font-size:2.35cqw}
+.capa-lema{font-style:italic;font-weight:600;color:var(--oliva);line-height:1.25}
+.capa-local{margin-top:.75em;font-family:var(--titulo);font-weight:600;color:#1f3d2b;font-size:.82em}
+
+.fim::before{z-index:0}
+.fim>*{z-index:1}
+.fim-golinha{display:none}
+.fim::after{content:"";position:absolute;left:0;right:0;top:0;height:7%;z-index:2;pointer-events:none;background:linear-gradient(rgba(250,208,150,.95),rgba(250,208,150,0))}
+.faca-parte{left:0;top:12%;display:flex;flex-direction:column;font-family:var(--corpo);font-weight:500;color:#fbf2df;font-size:4.5cqw;line-height:1.12}
+.faca-parte::after{display:none}
+.faca-parte span{display:block;padding-left:8.3cqw}
+.convite{left:12%;top:40.5%;width:46%;text-align:center;font-style:italic;font-weight:600;color:#4a1e02;font-size:1.9cqw;line-height:2.05}
+.contatos{left:2.4%;top:63%;width:60%}
+.contatos-titulo{margin-left:28.5cqw;font-size:1.7cqw;font-weight:600;letter-spacing:.05em}
+.pessoa{position:absolute;font-size:1.55cqw;line-height:1.35}
+.pessoa strong{display:block;font-weight:700;letter-spacing:.03em}
+.pessoa span{display:block}
+.p1{left:4.8cqw;top:5.4cqw;width:24cqw}
+.p2{left:31cqw;top:6.6cqw;width:22cqw;text-align:center}
+.pendente{margin-top:.6cqw;font-style:italic;color:#7a5a36;border-top:1px dashed rgba(90,36,3,.35);padding-top:.5cqw}
+.contato-linha{margin-top:.3cqw;font-weight:600;word-break:break-word}
+.botao-contato{display:inline-block;margin-top:.9cqw;padding:.45cqw 1.5cqw;border:max(1.5px,.12cqw) solid var(--verde-faixa);border-radius:999px;background:rgba(255,248,235,.55);color:var(--verde-faixa);font-weight:700;font-size:1.5cqw;text-decoration:none;transition:background .2s}
+.botao-contato:hover{background:rgba(255,248,235,.9)}
+
+/* ---------- Catálogo ---------- */
+.catalogo{--brotos:none}
+.catalogo .miolo{font-size:1.2rem}
+.ferramentas{display:grid;grid-template-columns:1fr 280px;gap:16px;margin:clamp(28px,4vw,48px) 0 .6rem}
+.campo{display:block}
+.campo span{display:block;font-weight:700;font-size:.95rem;color:var(--verde);margin-bottom:.25em}
+.campo input,.campo select{width:100%;padding:.7em .95em;font:inherit;font-size:1.1rem;font-weight:600;color:var(--tinta);background:rgba(255,250,240,.7);border:1px solid rgba(123,128,97,.7);border-radius:.8rem;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.contagem{margin:.4rem 0 1.2rem;font-style:italic;color:var(--oliva);font-weight:600}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.cartao-semente{display:flex;flex-direction:column;overflow:hidden;background:var(--vidro);border:1px solid rgba(255,255,255,.62);border-radius:1.1rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 22px 40px -28px rgba(90,36,3,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.cartao-semente .foto{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;background:rgba(123,128,97,.12);font-style:italic;color:#7a5a36;overflow:hidden}
+.cartao-semente .foto.sem-foto{padding:1rem}
+.cartao-semente .foto img{width:100%;height:100%;object-fit:cover}
+.cartao-semente .corpo{padding:1rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.etiqueta{font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a4f16}
+.cartao-semente h3{font-family:var(--titulo);font-size:1.25rem;color:var(--verde);line-height:1.2}
+.cartao-semente p{font-size:1.05rem;line-height:1.35;font-weight:600}
+.cartao-semente button,.mais button{align-self:flex-start;margin-top:auto;padding:.35em 1.1em;font:inherit;font-weight:700;color:var(--verde);background:none;border:1.5px solid var(--verde);border-radius:999px;cursor:pointer}
+.cartao-semente button:hover,.mais button:hover{background:rgba(78,96,19,.1)}
+.mais{text-align:center;margin-top:2rem}
+.mais button{align-self:auto;margin:0;padding:.5em 1.6em}
+.vazio{text-align:center;font-style:italic;margin-top:2rem}
+
+/* Ficha individual */
+dialog{width:min(720px,calc(100% - 28px));max-height:calc(100dvh - 28px);padding:clamp(20px,3vw,36px);border:1px solid rgba(255,255,255,.7);border-radius:1.3rem;background:rgba(250,238,216,.94);color:var(--tinta);font-family:var(--corpo);font-weight:600;font-size:1.2rem;box-shadow:0 30px 80px rgba(40,30,10,.35);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+dialog::backdrop{background:rgba(48,52,30,.5)}
+.ficha-fechar{position:absolute;right:12px;top:8px;width:40px;height:40px;font-size:2rem;line-height:1;color:var(--verde);background:none;border:0;cursor:pointer}
+dialog h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:.1em 0 .5em;padding-right:36px}
+dialog h2::after{display:none}
+.ficha-foto{display:grid;place-items:center;aspect-ratio:16/8;margin-bottom:1rem;border:1.5px dashed var(--borda);border-radius:.8rem;font-style:italic;color:#7a5a36;background:rgba(123,128,97,.1);overflow:hidden}
+.ficha-foto img{width:100%;height:100%;object-fit:cover}
+.ficha-foto.com-foto{border-style:solid;border-color:rgba(255,255,255,.6)}
+dl{margin:0;display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:.55rem 1.2rem}
+dt{font-weight:700;color:var(--verde)}
+dd{margin:0}
+.ficha-poema{margin-top:1.2rem;padding:.8rem 1.1rem;border-left:4px solid var(--ocre);background:rgba(255,232,201,.7);font-style:italic;font-weight:600;white-space:pre-line}
+.ficha-fonte{margin-top:1rem;font-size:.95rem;color:#7a5a36}
+
+/* ---------- Revelação suave ao rolar (só com JavaScript e sem preferência por menos movimento) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js .revela{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .revela.visivel{opacity:1;transform:none}
+  .js .trio .revela:nth-child(2){transition-delay:.08s}
+  .js .trio .revela:nth-child(3){transition-delay:.16s}
+}
+
+/* ---------- Cabeçalho compacto ---------- */
+@media (max-width:1040px){
+  .menu-botao{display:inline-block}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;padding:8px var(--gut) 16px;
+    background:rgba(255,243,223,.94);border-bottom:1px solid rgba(123,128,97,.3);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+  .menu.aberto{display:flex}
+  .menu a{padding:9px 0;font-size:1.15rem}
+  .menu .menu-contato{margin-top:8px;padding:6px 18px}
+}
+
+/* ---------- Telas menores: tudo em uma coluna ---------- */
+@media (max-width:860px){
+  html{scroll-padding-top:56px}
+  .secao{min-height:0;display:block;--larg:175cqw}
+  .secao::before{-webkit-mask-image:linear-gradient(transparent,#000 60px,#000 calc(100% - 60px),transparent);mask-image:linear-gradient(transparent,#000 60px,#000 calc(100% - 60px),transparent)}
+  .secao.sem-fade-topo::before{-webkit-mask-image:linear-gradient(#000,#000 calc(100% - 60px),transparent);mask-image:linear-gradient(#000,#000 calc(100% - 60px),transparent)}
+  .secao.sem-fade-pe::before{-webkit-mask-image:linear-gradient(transparent,#000 60px,#000);mask-image:linear-gradient(transparent,#000 60px,#000)}
+  .secao{--mv:linear-gradient(transparent 0,#000 calc(var(--hm)*.08),#000 calc(var(--hm)*.7),transparent var(--hm),transparent calc(100% - var(--hm)),#000 calc(100% - var(--hm)*.7),#000 calc(100% - var(--hm)*.08),transparent 100%)}
+  .secao::after{opacity:.85}
+  /* com a arte ampliada, cada seção mostra o canto onde estão os brotos principais */
+  .s05{--px-top:0%}
+  .s06,.s09{--px-top:0%;--px-bot:100%}
+  .s11{--px-top:0%}
+  h2,.abertura{text-shadow:0 0 14px rgba(255,238,210,.95),0 0 4px rgba(255,238,210,.9)}
+  .miolo{padding:118px var(--gut) 104px}
+  .duas,.duas.inversa,.duas.retrato-dir,.duas.destaque-dir{display:flex;flex-direction:column;gap:26px}
+  .duas.inversa .lado{order:0}
+  .lado{position:static;text-align:center}
+  .lado h2::after{margin-left:auto;margin-right:auto}
+  .lado blockquote{margin-top:22px}
+  .texto{font-size:1.14rem;padding:22px 20px}
+  .retrato{max-width:320px;margin:0 auto}
+  .destaque{font-size:1.4rem}
+  .vitrine{flex-direction:column;--h:auto}
+  .v-candeeiro img,.v-sementes img{height:auto;width:auto;max-width:min(100%,300px);margin:0 auto}
+  .v-video img{height:auto;width:100%;max-width:520px;margin:0 auto}
+  .video-link iframe{height:auto;aspect-ratio:16/9;width:min(100%,520px)}
+  .trio,.selos{grid-template-columns:1fr;gap:26px}
+  .nota{padding:28px 20px 22px;font-size:1.12rem}
+  .selo{--r:5px;--p:18px}
+
+  /* Capa e fechamento: arte no alto, texto abaixo */
+  .palco{aspect-ratio:auto;container-type:normal;display:flex;flex-direction:column;gap:20px;font-size:18px}
+  .palco>*{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;height:auto!important}
+  .capa{padding:0;gap:0;background-size:100% auto;background-position:top;background-color:var(--papel)}
+  .capa .palco-arte{position:relative;inset:auto;aspect-ratio:16/9;container-type:inline-size;width:100%!important}
+  .capa-titulo{left:2.8%!important;top:9%!important;position:absolute;font-size:6.05cqw}
+  .capa-texto{padding:22px 22px 40px;font-size:1.35rem!important}
+
+  .fim{--h:640px;padding:0 18px 40px;background-size:auto var(--h);background-position:0 0;background-color:#fbca85}
+  .fim::after{content:"";position:absolute!important;left:0;right:0;top:calc(var(--h) - 150px);height:150px;background:linear-gradient(rgba(255,255,255,0),#fbca85);pointer-events:none;z-index:0}
+  .fim::before{background-size:auto var(--h);background-position:0 0}
+  .faca-parte{position:relative;margin:0 -18px;height:calc(var(--h)*.40)!important;padding-top:calc(var(--h)*.115);font-size:calc(var(--h)*.075)}
+  .faca-parte span{padding-left:calc(var(--h)*.16);text-align:left}
+  .fim-golinha{display:block;width:min(70%,260px)!important;height:auto!important;margin:8px auto 0}
+  .convite{font-size:1.25rem;line-height:1.7}
+  .contatos{display:block}
+  .contatos-titulo{margin:0 0 12px;font-size:1.2rem}
+  .pessoa{position:relative;left:auto;top:auto;width:auto;font-size:1.1rem;margin-bottom:16px;text-align:left}
+  .p2{text-align:left}
+  .pendente{margin-top:6px;padding-top:6px}
+  .contato-linha{margin-top:4px}
+  .botao-contato{margin-top:10px;padding:8px 20px;font-size:1.1rem;border-width:1.5px}
+
+  .ferramentas{grid-template-columns:1fr}
+  dl{grid-template-columns:1fr;gap:2px}
+  dd{margin-bottom:10px}
+}
+
+@media print{
+  .topo{display:none}
+  .revela{opacity:1!important;transform:none!important}
+  .secao,.palco{break-inside:avoid}
+}

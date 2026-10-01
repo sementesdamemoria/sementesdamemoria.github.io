@@ -1,0 +1,87 @@
+/* Cópia incorporada de sementes.csv, usada quando o site é aberto direto do computador (file://). Gerada a partir do CSV. */
+window.SEMENTES = [
+ {
+  "id": "demo-01",
+  "nome_local": "Feijão (exemplo 1)",
+  "grupo": "Feijão",
+  "procedencia": "Texto demonstrativo: aqui entrará a procedência relatada por Golinha.",
+  "de_quem_veio": "Texto demonstrativo: aqui entrará de quem a semente veio.",
+  "plantio_guarda": "Texto demonstrativo: formas de plantio e de guarda.",
+  "usos": "Texto demonstrativo: usos na alimentação e no roçado.",
+  "circulacao": "Texto demonstrativo: circulação da semente entre famílias e comunidades.",
+  "historia": "Texto demonstrativo: a história associada a esta semente, segundo o relato de Golinha.",
+  "poema_relacionado": "",
+  "fonte_informacao": "Registro demonstrativo, sem valor documental",
+  "publicar": "sim"
+ },
+ {
+  "id": "demo-02",
+  "nome_local": "Feijão (exemplo 2)",
+  "grupo": "Feijão",
+  "procedencia": "Texto demonstrativo: aqui entrará a procedência relatada por Golinha.",
+  "de_quem_veio": "Texto demonstrativo: aqui entrará de quem a semente veio.",
+  "plantio_guarda": "Texto demonstrativo: formas de plantio e de guarda.",
+  "usos": "Texto demonstrativo: usos.",
+  "circulacao": "Texto demonstrativo: circulação.",
+  "historia": "Texto demonstrativo: história associada.",
+  "poema_relacionado": "",
+  "fonte_informacao": "Registro demonstrativo, sem valor documental",
+  "publicar": "sim"
+ },
+ {
+  "id": "demo-03",
+  "nome_local": "Milho (exemplo 1)",
+  "grupo": "Milho",
+  "procedencia": "Texto demonstrativo: aqui entrará a procedência relatada por Golinha.",
+  "de_quem_veio": "Texto demonstrativo: aqui entrará de quem a semente veio.",
+  "plantio_guarda": "Texto demonstrativo: formas de plantio e de guarda.",
+  "usos": "Texto demonstrativo: usos.",
+  "circulacao": "Texto demonstrativo: circulação.",
+  "historia": "Texto demonstrativo: história associada.",
+  "poema_relacionado": "Texto demonstrativo: espaço para o poema de Golinha relacionado a esta semente, transcrito com seu vocabulário e ritmo.",
+  "fonte_informacao": "Registro demonstrativo, sem valor documental",
+  "publicar": "sim"
+ },
+ {
+  "id": "demo-04",
+  "nome_local": "Milho (exemplo 2)",
+  "grupo": "Milho",
+  "procedencia": "Texto demonstrativo: aqui entrará a procedência relatada por Golinha.",
+  "de_quem_veio": "Texto demonstrativo: aqui entrará de quem a semente veio.",
+  "plantio_guarda": "Texto demonstrativo: formas de plantio e de guarda.",
+  "usos": "Texto demonstrativo: usos.",
+  "circulacao": "Texto demonstrativo: circulação.",
+  "historia": "Texto demonstrativo: história associada.",
+  "poema_relacionado": "",
+  "fonte_informacao": "Registro demonstrativo, sem valor documental",
+  "publicar": "sim"
+ },
+ {
+  "id": "demo-05",
+  "nome_local": "Semente de outro grupo (exemplo)",
+  "grupo": "Outras sementes",
+  "procedencia": "Texto demonstrativo: aqui entrará a procedência relatada por Golinha.",
+  "de_quem_veio": "Texto demonstrativo: aqui entrará de quem a semente veio.",
+  "plantio_guarda": "Texto demonstrativo: formas de plantio e de guarda.",
+  "usos": "Texto demonstrativo: usos.",
+  "circulacao": "Texto demonstrativo: circulação.",
+  "historia": "Texto demonstrativo: história associada.",
+  "poema_relacionado": "",
+  "fonte_informacao": "Registro demonstrativo, sem valor documental",
+  "publicar": "sim"
+ },
+ {
+  "id": "demo-06",
+  "nome_local": "Registro não publicado (exemplo)",
+  "grupo": "Feijão",
+  "procedencia": "Este registro existe na planilha, mas a coluna publicar está como não: não deve aparecer no site.",
+  "de_quem_veio": "",
+  "plantio_guarda": "",
+  "usos": "",
+  "circulacao": "",
+  "historia": "",
+  "poema_relacionado": "",
+  "fonte_informacao": "Registro demonstrativo, sem valor documental",
+  "publicar": "não"
+ }
+];
