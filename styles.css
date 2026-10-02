@@ -188,6 +188,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .contato-linha a:hover{text-decoration-thickness:.16em}
 .pessoa .contato-linha span{display:inline}
 .pessoa .contato-linha{white-space:nowrap}
+.p2 .contato-linha{margin-top:.9cqw}
 .botao-contato{display:inline-block;margin-top:.9cqw;padding:.45cqw 1.5cqw;border:max(1.5px,.12cqw) solid #20330b;border-radius:999px;background:rgba(255,248,235,.55);color:#20330b;font-weight:700;font-size:1.5cqw;text-decoration:none;transition:background .2s}
 .botao-contato:hover{background:rgba(255,248,235,.9)}
 
