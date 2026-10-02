@@ -174,6 +174,18 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
   55%{opacity:1;filter:blur(0)}
   100%{opacity:1;transform:none;filter:none}}
 @media (prefers-reduced-motion:reduce){.capa-maos{animation:none}}
+
+/* Capa menos rígida: a base dissolve no papel da seção seguinte e os elementos entram em sequência */
+@media (min-width:861px){
+  .capa{-webkit-mask-image:linear-gradient(#000 88%,transparent 99.5%);mask-image:linear-gradient(#000 88%,transparent 99.5%);margin-bottom:-6cqw}
+  .s02{padding-top:0}
+}
+.capa-titulo{animation:capa-entra 1.6s cubic-bezier(.2,.7,.2,1) .1s both}
+.capa-texto{animation:capa-entra 1.6s cubic-bezier(.2,.7,.2,1) .9s both}
+@keyframes capa-entra{from{opacity:0;transform:translateY(1.4cqw)}to{opacity:1;transform:none}}
+.capa-maos{animation:maos-surgem 2.4s cubic-bezier(.2,.7,.2,1) .25s both,maos-respira 11s ease-in-out 2.7s infinite alternate}
+@keyframes maos-respira{from{transform:translateY(0) rotate(0)}to{transform:translateY(-.7%) rotate(.35deg)}}
+@media (prefers-reduced-motion:reduce){.capa-titulo,.capa-texto,.capa-maos{animation:none}}
 .capa-titulo{position:absolute;left:2.7%;top:13.3%;width:52%;font-family:var(--script);font-weight:400;font-size:6.25cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
 .capa-texto{left:5.5%;bottom:12.5%;font-size:2.24cqw}
 .capa-lema{font-style:italic;font-weight:600;color:var(--oliva);line-height:1.25}
