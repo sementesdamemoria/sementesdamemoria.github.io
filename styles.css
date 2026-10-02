@@ -177,8 +177,8 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 
 /* Capa menos rígida: a base dissolve no papel da seção seguinte e os elementos entram em sequência */
 @media (min-width:861px){
-  .capa{-webkit-mask-image:linear-gradient(#000 88%,transparent 99.5%);mask-image:linear-gradient(#000 88%,transparent 99.5%);margin-bottom:-6cqw}
-  .s02{padding-top:0}
+  .capa{-webkit-mask-image:linear-gradient(#000 88%,transparent 99.5%);mask-image:linear-gradient(#000 88%,transparent 99.5%);margin-bottom:5vw}
+  #projeto::after{background:var(--brotos,none) var(--px-bot,50%) 100%/var(--larg) auto no-repeat}
 }
 .capa-titulo{animation:capa-entra 1.6s cubic-bezier(.2,.7,.2,1) .1s both}
 .capa-texto{animation:capa-entra 1.6s cubic-bezier(.2,.7,.2,1) .9s both}
