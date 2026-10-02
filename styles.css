@@ -153,7 +153,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 
 .capa::before{display:none}
 .capa .palco-arte{inset:0}
-.capa-titulo{position:absolute;left:2.8%;top:9%;width:50%;font-family:var(--script);font-weight:400;font-size:6.05cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
+.capa-titulo{position:absolute;left:5.5%;top:14.4%;width:50%;font-family:var(--script);font-weight:400;font-size:6.05cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
 .capa-texto{left:5.5%;bottom:12.5%;font-size:2.35cqw}
 .capa-lema{font-style:italic;font-weight:600;color:var(--oliva);line-height:1.25}
 .capa-local{margin-top:.75em;font-family:var(--titulo);font-weight:600;color:#1f3d2b;font-size:.82em}
@@ -270,7 +270,7 @@ dd{margin:0}
   .palco>*{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;height:auto!important}
   .capa{padding:0;gap:0;background-size:100% auto;background-position:top;background-color:var(--papel)}
   .capa .palco-arte{position:relative;inset:auto;aspect-ratio:16/9;container-type:inline-size;width:100%!important}
-  .capa-titulo{left:2.8%!important;top:9%!important;position:absolute;font-size:6.05cqw}
+  .capa-titulo{left:5.5%!important;top:14.4%!important;position:absolute;font-size:6.05cqw}
   .capa-texto{padding:22px 22px 40px;font-size:1.35rem!important}
 
   .fim{--h:640px;padding:0 18px 40px;background-size:auto var(--h);background-position:0 0;background-color:#fbca85}
