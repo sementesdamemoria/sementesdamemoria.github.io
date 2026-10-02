@@ -9,7 +9,7 @@
    Observação: o endereço aparece na página para qualquer visitante, e programas que varrem a internet
    atrás de e-mails podem encontrá-lo. Escrevê-lo aqui, e não direto no HTML, dificulta mas não impede isso. */
 window.CONTATO = {
-  email: "",
-  telefone: "",
+  email: "livrosementesdamemoria@gmail.com",
+  telefone: "(84) 99984-1637",
   assunto: "Contato institucional: Sementes da Memória"
 };
