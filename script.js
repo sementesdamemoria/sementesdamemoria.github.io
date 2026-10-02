@@ -60,7 +60,13 @@
     var lin = document.querySelector('[data-contato-email]');
     if (pend) pend.hidden = true;
     if (btn) { btn.href = 'mailto:' + C.email + '?subject=' + assunto; btn.hidden = false; }
-    if (lin) { lin.textContent = C.email; lin.hidden = false; }
+    if (lin) {
+      lin.textContent = '';
+      var rot = document.createElement('span'); rot.textContent = 'E-mail: ';
+      var lk = document.createElement('a');
+      lk.href = 'mailto:' + C.email + '?subject=' + assunto; lk.textContent = C.email;
+      lin.append(rot, lk); lin.hidden = false;
+    }
     var tel = document.querySelector('[data-contato-telefone]');
     if (tel && C.telefone) { tel.textContent = C.telefone; tel.hidden = false; }
   }
