@@ -105,7 +105,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .retrato figcaption{margin-top:1em;text-align:center;font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.05rem,1rem + .25vw,1.2rem);line-height:1.4}
 
 /* Trajetória: vitrine de materiais */
-.abertura{max-width:44em;margin:0 auto;text-align:center;color:var(--marrom-claro);font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);font-weight:600;line-height:1.45}
+.abertura{max-width:31em;margin:0 auto;text-align:center;text-shadow:0 0 .6em rgba(255,238,210,.95),0 0 1.4em rgba(255,238,210,.8);color:var(--marrom-claro);font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);font-weight:600;line-height:1.45}
 .vitrine{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(18px,2.4vw,34px);margin-top:clamp(36px,5vw,72px);--h:clamp(200px,23vw,320px)}
 .vitrine img{border-radius:8px;box-shadow:0 22px 40px -24px rgba(90,36,3,.55);border:1px solid rgba(255,255,255,.6)}
 .v-candeeiro img,.v-sementes img{height:var(--h);width:auto}
@@ -115,10 +115,12 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .video-link iframe{display:block;height:calc(var(--h)*.78);width:calc(var(--h)*.78*1.817);border:0;border-radius:8px}
 
 /* Três painéis (Memória viva, Como será feito) */
+@media (min-width:1100px){.trio{margin-left:calc(-1*clamp(0px,3.4vw,56px));margin-right:calc(-1*clamp(0px,3.4vw,56px))}}
 .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(36px,5vw,68px)}
 .nota{position:relative;color:#4d501b;padding:clamp(24px,2.4vw,36px);font-size:clamp(1.1rem,1.02rem + .3vw,1.28rem);font-weight:600;line-height:1.5}
 .nota::before{content:"";position:absolute;top:-1px;left:50%;width:46px;height:6px;transform:translateX(-50%);border-radius:0 0 5px 5px;background:var(--verde-faixa);opacity:.8}
-.nota h3{font-family:var(--titulo);font-size:clamp(1.12rem,1.05rem + .25vw,1.3rem);font-weight:700;color:#79370b;line-height:1.25;margin-bottom:.7em}
+.nota h3{font-family:var(--titulo);font-size:clamp(1.12rem,1.05rem + .25vw,1.3rem);font-weight:700;color:#79370b;line-height:1.25;margin-bottom:.7em;text-align:center}
+.painel p{text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:6 3 3}
 .nota p{text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:6 3 3}
 .nota p:has(.link-video){text-align:left;-webkit-hyphens:none;hyphens:none}
 
@@ -131,7 +133,8 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .titulo-script{margin-top:.15em;font-style:italic;font-weight:500;color:#803a07;font-size:clamp(2rem,1.3rem + 2.4vw,3.2rem);line-height:1.15}
 
 /* Sementes que guardam histórias */
-.destaque{padding-left:clamp(18px,2vw,28px);border-left:3px solid var(--ocre);font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.4rem,1.1rem + 1.1vw,2.1rem);line-height:1.35}
+.destaque::before{content:"";display:block;width:56px;height:3px;margin:0 auto .7em;background:var(--ocre);border-radius:2px}
+.destaque{text-align:center;font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.4rem,1.1rem + 1.1vw,2.1rem);line-height:1.35}
 
 /* Como contribuir */
 .s11 .abertura{margin-top:clamp(20px,2.6vw,34px);color:var(--marrom-claro);font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem)}
@@ -147,12 +150,15 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .selo li{text-wrap:balance}
 .selo li::after{content:" ·"}
 .selo li:last-child::after{content:""}
-.rodape-secao{max-width:52em;margin:clamp(36px,5vw,64px) auto 0;text-align:center;color:var(--marrom-claro);font-weight:600;font-size:clamp(1.1rem,1.02rem + .3vw,1.3rem);line-height:1.5}
+.rodape-secao{max-width:34em;text-shadow:0 0 .6em rgba(255,238,210,.95),0 0 1.4em rgba(255,238,210,.8);margin:clamp(36px,5vw,64px) auto 0;text-align:center;color:var(--marrom-claro);font-weight:600;font-size:clamp(1.1rem,1.02rem + .3vw,1.3rem);line-height:1.5}
 
 /* ---------- Palcos 16:9: capa e fechamento ---------- */
 .palco{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;container-type:inline-size;background:var(--papel) var(--fundo) center/cover no-repeat}
 .palco::before{content:"";position:absolute;inset:0;background:var(--brotos,none) 0 0/100% 100% no-repeat;pointer-events:none}
 .palco>*{position:absolute}
+@media (min-width:861px){
+  .fim::before{-webkit-mask-image:linear-gradient(#000 0,#000 33%,transparent 42%),linear-gradient(to right,transparent 0,transparent 28%,#000 34%);mask-image:linear-gradient(#000 0,#000 33%,transparent 42%),linear-gradient(to right,transparent 0,transparent 28%,#000 34%);-webkit-mask-composite:source-in;mask-composite:intersect}
+}
 
 .capa::before{display:none}
 .capa .palco-arte{inset:0}
@@ -175,7 +181,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .pessoa strong{display:block;font-weight:700;letter-spacing:.03em}
 .pessoa span{display:block}
 .p1{left:4.8cqw;top:5.4cqw;width:21.5cqw}
-.p2{left:30cqw;top:5.8cqw;width:22cqw;text-align:center}
+.p2{left:30cqw;top:5.4cqw;width:22cqw;text-align:center}
 .pendente{margin-top:.6cqw;font-style:italic;color:#7a5a36;border-top:1px dashed rgba(90,36,3,.35);padding-top:.5cqw}
 .contato-linha{margin-top:.3cqw;font-weight:600;word-break:break-word}
 .contato-linha a{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.22em}
@@ -282,7 +288,7 @@ dd{margin:0}
 
   .fim{--h:640px;padding:0 18px 40px;background-size:auto var(--h);background-position:0 0;background-color:#fbca85}
   .fim::after{content:"";position:absolute!important;left:0;right:0;top:calc(var(--h) - 150px);height:150px;background:linear-gradient(rgba(255,255,255,0),#fbca85);pointer-events:none;z-index:0}
-  .fim::before{background-size:auto var(--h);background-position:0 0}
+  .fim::before{display:none}
   .faca-parte{position:relative;margin:0 -18px;height:calc(var(--h)*.40)!important;padding-top:calc(var(--h)*.115);font-size:calc(var(--h)*.075)}
   .faca-parte span{padding-left:calc(var(--h)*.16);text-align:left}
   .fim-golinha{display:block;width:min(70%,260px)!important;height:auto!important;margin:8px auto 0}
