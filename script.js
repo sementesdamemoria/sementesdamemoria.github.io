@@ -67,8 +67,15 @@
       lk.href = 'mailto:' + C.email + '?subject=' + assunto; lk.textContent = C.email;
       lin.append(rot, lk); lin.hidden = false;
     }
+    function comRotulo(el, numero) {
+      el.textContent = '';
+      var r = document.createElement('span'); r.textContent = 'WhatsApp: ';
+      el.append(r, numero); el.hidden = false;
+    }
     var tel = document.querySelector('[data-contato-telefone]');
-    if (tel && C.telefone) { tel.textContent = C.telefone; tel.hidden = false; }
+    if (tel && C.telefone) comRotulo(tel, C.telefone);
+    var telA = document.querySelector('[data-contato-telefone-autor]');
+    if (telA && C.telefoneAutor) comRotulo(telA, C.telefoneAutor);
   }
 
   /* ---------- Vídeo: toca dentro da página quando houver o código do YouTube ---------- */
