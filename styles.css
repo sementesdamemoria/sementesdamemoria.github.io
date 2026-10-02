@@ -263,6 +263,7 @@ dd{margin:0}
   .s11{--px-top:0%}
   h2,.abertura{text-shadow:0 0 14px rgba(255,238,210,.95),0 0 4px rgba(255,238,210,.9)}
   .miolo{padding:118px var(--gut) 104px}
+  #repositorio .miolo{padding-bottom:190px}
   .duas,.duas.inversa,.duas.retrato-dir,.duas.destaque-dir{display:flex;flex-direction:column;gap:26px}
   .duas.inversa .lado{order:0}
   .lado{position:static;text-align:center}
