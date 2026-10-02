@@ -70,6 +70,9 @@ h1,h2,h3,p,blockquote,figure{margin:0}
   -webkit-mask-image:var(--mv);mask-image:var(--mv)}
 @media (min-width:861px){.secao::after{-webkit-mask-image:var(--mv),var(--mh);mask-image:var(--mv),var(--mh);-webkit-mask-composite:source-in;mask-composite:intersect}}
 
+/* Repositório: título em fundo aberto; só a arte do pé permanece */
+#repositorio::after{background:var(--brotos,none) var(--px-bot,50%) 100%/var(--larg) auto no-repeat}
+
 .miolo{position:relative;width:100%;max-width:calc(1120px + 2*var(--gut));margin:0 auto;padding:clamp(76px,8vw,132px) var(--gut)}
 .miolo.estreito{max-width:calc(800px + 2*var(--gut))}
 .miolo.largo{max-width:calc(1240px + 2*var(--gut))}
