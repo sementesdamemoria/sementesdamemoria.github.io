@@ -193,6 +193,14 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .capa-maos{animation:maos-surgem 2.4s cubic-bezier(.2,.7,.2,1) .25s both,maos-respira 11s ease-in-out 2.7s infinite alternate}
 @keyframes maos-respira{from{transform:translateY(0) rotate(0)}to{transform:translateY(-.7%) rotate(.35deg)}}
 @media (prefers-reduced-motion:reduce){.capa-titulo,.capa-texto,.capa-maos{animation:none}}
+/* Capa: nuances de aquarela em tons quentes sobre o papel, mescladas ao fundo */
+.capa .palco-arte::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;
+  background:
+    radial-gradient(46% 34% at 24% 70%,rgba(250,168,98,.55),transparent 72%),
+    radial-gradient(40% 26% at 52% 90%,rgba(246,150,80,.45),transparent 74%),
+    radial-gradient(34% 30% at 8% 48%,rgba(255,186,116,.5),transparent 70%),
+    radial-gradient(38% 24% at 62% 10%,rgba(252,170,100,.38),transparent 72%),
+    radial-gradient(30% 22% at 40% 52%,rgba(255,196,128,.42),transparent 70%)}
 .capa-titulo{position:absolute;left:2.7%;top:13.3%;width:52%;font-family:var(--script);font-weight:400;font-size:6.25cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
 .capa-texto{left:5.5%;bottom:12.5%;font-size:2.24cqw}
 .capa-lema{font-style:italic;font-weight:600;color:var(--oliva);line-height:1.25}
