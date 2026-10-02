@@ -15,12 +15,12 @@
 :root{
   --papel:#ffe8c9;
   --fundo-base:#fbd8a9;        /* média dos fundos de aquarela, aparece onde um fundo se dissolve no seguinte */
-  --verde:#4e6013;             /* títulos */
+  --verde:#47550b;             /* títulos */
   --verde-faixa:#385b47;
-  --tinta:#5a2403;             /* texto corrido */
-  --oliva:#66660f;             /* citações e legendas (oliva da apresentação, escurecido para legibilidade) */
+  --tinta:#3f2109;             /* texto corrido */
+  --oliva:#5f5707;             /* citações e legendas (oliva da apresentação, escurecido para legibilidade) */
   --ocre:#c8923a;
-  --marrom-claro:#8a3d08;
+  --marrom-claro:#7a3c0b;
   --borda:#7b8061;
   --corpo:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --script:"Great Vibes","Cormorant Garamond",cursive;
@@ -105,7 +105,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .retrato figcaption{margin-top:1em;text-align:center;font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.05rem,1rem + .25vw,1.2rem);line-height:1.4}
 
 /* Trajetória: vitrine de materiais */
-.abertura{max-width:44em;margin:0 auto;text-align:center;font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);font-weight:600;line-height:1.45}
+.abertura{max-width:44em;margin:0 auto;text-align:center;color:var(--marrom-claro);font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);font-weight:600;line-height:1.45}
 .vitrine{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(18px,2.4vw,34px);margin-top:clamp(36px,5vw,72px);--h:clamp(200px,23vw,320px)}
 .vitrine img{border-radius:8px;box-shadow:0 22px 40px -24px rgba(90,36,3,.55);border:1px solid rgba(255,255,255,.6)}
 .v-candeeiro img,.v-sementes img{height:var(--h);width:auto}
@@ -116,9 +116,9 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 
 /* Três painéis (Memória viva, Como será feito) */
 .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(36px,5vw,68px)}
-.nota{position:relative;padding:clamp(24px,2.4vw,36px);font-size:clamp(1.1rem,1.02rem + .3vw,1.28rem);font-weight:600;line-height:1.5}
+.nota{position:relative;color:#4d501b;padding:clamp(24px,2.4vw,36px);font-size:clamp(1.1rem,1.02rem + .3vw,1.28rem);font-weight:600;line-height:1.5}
 .nota::before{content:"";position:absolute;top:-1px;left:50%;width:46px;height:6px;transform:translateX(-50%);border-radius:0 0 5px 5px;background:var(--verde-faixa);opacity:.8}
-.nota h3{font-family:var(--titulo);font-size:clamp(1.12rem,1.05rem + .25vw,1.3rem);font-weight:700;color:var(--verde);line-height:1.25;margin-bottom:.7em}
+.nota h3{font-family:var(--titulo);font-size:clamp(1.12rem,1.05rem + .25vw,1.3rem);font-weight:700;color:#79370b;line-height:1.25;margin-bottom:.7em}
 
 .link-video{display:inline-block;margin-top:.4em;font-size:.92em;font-weight:700;color:var(--verde);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .link-video:hover{text-decoration-thickness:2px}
@@ -126,7 +126,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 /* O livro */
 .titulo-topo{text-align:center;margin-bottom:clamp(24px,3vw,40px)}
 .sobretitulo{font-family:var(--titulo);font-weight:700;color:var(--verde);font-size:clamp(1rem,.95rem + .3vw,1.2rem);letter-spacing:.22em}
-.titulo-script{margin-top:.15em;font-style:italic;font-weight:500;color:#9a5a20;font-size:clamp(2rem,1.3rem + 2.4vw,3.2rem);line-height:1.15}
+.titulo-script{margin-top:.15em;font-style:italic;font-weight:500;color:#803a07;font-size:clamp(2rem,1.3rem + 2.4vw,3.2rem);line-height:1.15}
 
 /* Sementes que guardam histórias */
 .destaque{padding-left:clamp(18px,2vw,28px);border-left:3px solid var(--ocre);font-style:italic;font-weight:600;color:var(--oliva);font-size:clamp(1.4rem,1.1rem + 1.1vw,2.1rem);line-height:1.35}
@@ -142,6 +142,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
   mask-composite:intersect}
 .selo h3{font-family:var(--titulo);font-size:clamp(.95rem,.9rem + .2vw,1.1rem);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1em;color:#fff3d6}
 .selo ul{list-style:none;margin:0;padding:0;font-size:clamp(1.15rem,1.03rem + .4vw,1.38rem);line-height:1.5;font-weight:600}
+.selo li{text-wrap:balance}
 .selo li::after{content:" ·"}
 .selo li:last-child::after{content:""}
 .rodape-secao{max-width:52em;margin:clamp(36px,5vw,64px) auto 0;text-align:center;color:var(--marrom-claro);font-weight:600;font-size:clamp(1.1rem,1.02rem + .3vw,1.3rem);line-height:1.5}
@@ -153,10 +154,10 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 
 .capa::before{display:none}
 .capa .palco-arte{inset:0}
-.capa-titulo{position:absolute;left:5.5%;top:14.4%;width:50%;font-family:var(--script);font-weight:400;font-size:6.05cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
-.capa-texto{left:5.5%;bottom:12.5%;font-size:2.35cqw}
+.capa-titulo{position:absolute;left:2.7%;top:13.3%;width:52%;font-family:var(--script);font-weight:400;font-size:6.25cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
+.capa-texto{left:5.5%;bottom:12.5%;font-size:2.24cqw}
 .capa-lema{font-style:italic;font-weight:600;color:var(--oliva);line-height:1.25}
-.capa-local{margin-top:.75em;font-family:var(--titulo);font-weight:600;color:#1f3d2b;font-size:.82em}
+.capa-local{margin-top:.75em;font-family:var(--titulo);font-weight:600;color:#163413;font-size:.76em}
 
 .fim::before{z-index:0}
 .fim>*{z-index:1}
@@ -165,17 +166,20 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .faca-parte{left:0;top:12%;display:flex;flex-direction:column;font-family:var(--corpo);font-weight:500;color:#fbf2df;font-size:4.5cqw;line-height:1.12}
 .faca-parte::after{display:none}
 .faca-parte span{display:block;padding-left:8.3cqw}
-.convite{left:12%;top:40.5%;width:46%;text-align:center;font-style:italic;font-weight:600;color:#4a1e02;font-size:1.9cqw;line-height:2.05}
-.contatos{left:2.4%;top:63%;width:60%}
-.contatos-titulo{margin-left:28.5cqw;font-size:1.7cqw;font-weight:600;letter-spacing:.05em}
-.pessoa{position:absolute;font-size:1.55cqw;line-height:1.35}
+.convite{left:12%;top:40.8%;width:46%;text-align:center;font-style:italic;font-weight:600;color:#471900;font-size:2.15cqw;line-height:1.52}
+.contatos{left:2.4%;top:60%;width:60%;color:#20330b}
+.contatos-titulo{margin-left:25.1cqw;margin-top:1.1cqw;font-size:1.7cqw;font-weight:600;letter-spacing:.05em}
+.pessoa{position:absolute;font-size:1.65cqw;line-height:1.2}
 .pessoa strong{display:block;font-weight:700;letter-spacing:.03em}
 .pessoa span{display:block}
-.p1{left:4.8cqw;top:5.4cqw;width:24cqw}
-.p2{left:31cqw;top:6.6cqw;width:22cqw;text-align:center}
+.p1{left:4.8cqw;top:5.4cqw;width:21.5cqw}
+.p2{left:30cqw;top:5.8cqw;width:22cqw;text-align:center}
 .pendente{margin-top:.6cqw;font-style:italic;color:#7a5a36;border-top:1px dashed rgba(90,36,3,.35);padding-top:.5cqw}
 .contato-linha{margin-top:.3cqw;font-weight:600;word-break:break-word}
-.botao-contato{display:inline-block;margin-top:.9cqw;padding:.45cqw 1.5cqw;border:max(1.5px,.12cqw) solid var(--verde-faixa);border-radius:999px;background:rgba(255,248,235,.55);color:var(--verde-faixa);font-weight:700;font-size:1.5cqw;text-decoration:none;transition:background .2s}
+.contato-linha a{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.22em}
+.contato-linha a:hover{text-decoration-thickness:.16em}
+.pessoa .contato-linha span{display:inline}
+.botao-contato{display:inline-block;margin-top:.9cqw;padding:.45cqw 1.5cqw;border:max(1.5px,.12cqw) solid #20330b;border-radius:999px;background:rgba(255,248,235,.55);color:#20330b;font-weight:700;font-size:1.5cqw;text-decoration:none;transition:background .2s}
 .botao-contato:hover{background:rgba(255,248,235,.9)}
 
 /* ---------- Catálogo ---------- */
@@ -270,7 +274,7 @@ dd{margin:0}
   .palco>*{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;height:auto!important}
   .capa{padding:0;gap:0;background-size:100% auto;background-position:top;background-color:var(--papel)}
   .capa .palco-arte{position:relative;inset:auto;aspect-ratio:16/9;container-type:inline-size;width:100%!important}
-  .capa-titulo{left:5.5%!important;top:14.4%!important;position:absolute;font-size:6.05cqw}
+  .capa-titulo{left:2.7%!important;top:13.3%!important;position:absolute;font-size:6.25cqw}
   .capa-texto{padding:22px 22px 40px;font-size:1.35rem!important}
 
   .fim{--h:640px;padding:0 18px 40px;background-size:auto var(--h);background-position:0 0;background-color:#fbca85}
