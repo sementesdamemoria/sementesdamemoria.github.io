@@ -181,6 +181,7 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 .contato-linha a{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.22em}
 .contato-linha a:hover{text-decoration-thickness:.16em}
 .pessoa .contato-linha span{display:inline}
+.pessoa .contato-linha{white-space:nowrap}
 .botao-contato{display:inline-block;margin-top:.9cqw;padding:.45cqw 1.5cqw;border:max(1.5px,.12cqw) solid #20330b;border-radius:999px;background:rgba(255,248,235,.55);color:#20330b;font-weight:700;font-size:1.5cqw;text-decoration:none;transition:background .2s}
 .botao-contato:hover{background:rgba(255,248,235,.9)}
 
@@ -291,7 +292,7 @@ dd{margin:0}
   .pessoa{position:relative;left:auto;top:auto;width:auto;font-size:1.1rem;margin-bottom:16px;text-align:left}
   .p2{text-align:left}
   .pendente{margin-top:6px;padding-top:6px}
-  .contato-linha{margin-top:4px}
+  .contato-linha,.pessoa .contato-linha{margin-top:4px;white-space:normal}
   .botao-contato{margin-top:10px;padding:8px 20px;font-size:1.1rem;border-width:1.5px}
 
   .ferramentas{grid-template-columns:1fr}
