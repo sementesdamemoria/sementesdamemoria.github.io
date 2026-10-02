@@ -165,6 +165,15 @@ h2.caixa-alta{text-transform:uppercase;font-size:clamp(1.8rem,1.2rem + 2vw,2.9re
 
 .capa::before{display:none}
 .capa .palco-arte{inset:0}
+
+/* Mãos da capa: camada separada do fundo, que emerge ao carregar (posição em % do quadro 16:9) */
+.capa-maos{position:absolute;left:43.625%;top:23.667%;width:56.375%;height:auto;display:block;pointer-events:none;user-select:none;
+  transform-origin:50% 100%;animation:maos-surgem 2.4s cubic-bezier(.2,.7,.2,1) .25s both}
+@keyframes maos-surgem{
+  0%{opacity:0;transform:translateY(7%) scale(.94);filter:blur(6px)}
+  55%{opacity:1;filter:blur(0)}
+  100%{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion:reduce){.capa-maos{animation:none}}
 .capa-titulo{position:absolute;left:2.7%;top:13.3%;width:52%;font-family:var(--script);font-weight:400;font-size:6.25cqw;line-height:1.1;color:#fff;white-space:nowrap;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.18)}
 .capa-texto{left:5.5%;bottom:12.5%;font-size:2.24cqw}
 .capa-lema{font-style:italic;font-weight:600;color:var(--oliva);line-height:1.25}
