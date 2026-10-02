@@ -3,7 +3,8 @@
    e o botão de contato não aparece.
 
    email:    endereço do projeto, por exemplo "contato@exemplo.com"
-   telefone: opcional, escrito como deve aparecer na página, por exemplo "(84) 90000-0000"
+   telefone: opcional, número da coordenação, escrito como deve aparecer; a página coloca "WhatsApp:" antes
+   telefoneAutor: opcional, número do autor, mesma regra
    assunto:  assunto que já vem preenchido quando a pessoa clica em "Escrever ao projeto"
 
    Observação: o endereço aparece na página para qualquer visitante, e programas que varrem a internet
@@ -11,5 +12,6 @@
 window.CONTATO = {
   email: "livrosementesdamemoria@gmail.com",
   telefone: "(84) 99984-1637",
+  telefoneAutor: "(84) 99620-3693",
   assunto: "Contato institucional: Sementes da Memória"
 };
